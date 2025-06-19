@@ -19,12 +19,30 @@ This project investigates the question of **what is the average temperature of e
 The dataset is collected by scraping the National Weather Service API and spans from 1960 to 2024 and contains charactaristics for each day of the year.
 Data size: **23742 rows** and **7 columns**
 
-## Features:
+### Features:
 - **`avgt`**: Average temperature of the day in Fahrenheit
 - **`min`**: Minimum temperature in Fahrenheit
 - **`max`**: Maximum temperature in Fahrenheit
 - **`pcpn`**: Measured precipitation in inches
 
+## Data Cleaning and Exploratory Data Analysis
+To ensure a meaningful and valid data analysis, the following steps were taken to clean and organize the dataset:
+
+**Removing unnecessary columns**
+Since February 29. happens once in four years, I decided to drop all of the data that had date of February 29.
+
+**Imputing missing values** 
+Despite dropping Feb. 29 data I still had **5208** values missing, that span all features with the most data missing from precipitation. Since this was a large amount of the dataset and since **`avgt`** was relatively intact, I decided to impute missing data using mean imputation.
+
+**Cleaned dataset**
+After cleaning this is how my dataset looks like:
+|    | date                |   max |   min |   avgt |   pcpn | md    |
+|---:|:--------------------|------:|------:|-------:|-------:|:------|
+|  0 | 1960-01-01 00:00:00 |    31 |    15 |   23   |   0.07 | 01-01 |
+|  1 | 1960-01-02 00:00:00 |    32 |     4 |   18   |   0    | 01-02 |
+|  2 | 1960-01-03 00:00:00 |    24 |     5 |   14.5 |   0    | 01-03 |
+|  3 | 1960-01-04 00:00:00 |    30 |     3 |   16.5 |   0    | 01-04 |
+|  4 | 1960-01-05 00:00:00 |    36 |    10 |   23   |   0    | 01-05 |
 
 
 
