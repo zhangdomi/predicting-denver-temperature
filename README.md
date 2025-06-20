@@ -103,8 +103,28 @@ From this plot we can deduce that days with average temperatures well below free
 
 This pivot table of mean daily average temperatures for each month-decade combination, order the rows from January through December and the columns chronologically, and round all values to one decimal place. The resulting chart makes it easy to see that, while some months' temperature increased steadily others remained the same across all decades.
 
+## Framing a Prediction Problem
+
+The ultimate goal is to predict the average temperature **`avgt`** of Denver in a given day using previous years' of data. Predicting the average temperature will give me a general idea of how a certain day's temperature market might look like on Kalshi.
+
+This project is unique in that the data is comprised of time series data and that the features used for the prediction are the previous years of the same day. It is necessary to acknowledge that although this seems to make sense on surface level, it is not the ideal way of predicting as the prediction might not be able to capture some relevant information. For example, other predictive models might use a rolling window of last 7 days that might capture the general trend of a certain year better. 
+
+The model will be evaluated using three metrics:
+
+* **`Mean Absolute Error (MAE)`**: gives the average prediction error in °F and is robust to outliers.
+
+* **`Mean Squared Error (MSE)`**: penalizes larger errors more heavily, ensuring that days with unexpectedly large misses are driven down.
+
+* **`Root Mean Squared Error (RMSE)`**: the square root of MSE, which brings the penalization of large errors back into the original °F units for easy interpretation.
 
 
+
+
+
+
+
+
+ 
 
 
 
