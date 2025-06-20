@@ -72,5 +72,23 @@ This plot shows the seasonality from 2014 to 2024 highlighting the fact that Den
  frameborder="0"
  ></iframe>
 
-In this plot we can see that, in general, the higher the minimum temperature, the higher the daytime high temperature -- i.e. warmer nights almost always lead to warmer days. This tight, roughly linear band of points shows a strong positive correlation between the daily minimum and maximum temperatures
+This plot shows that, in general, the higher the minimum temperature, the higher the daytime high temperature -- i.e. warmer nights almost always lead to warmer days. This tight, roughly linear band of points shows a strong positive correlation between the daily minimum and maximum temperatures
+
+
+ <iframe
+ src="assets/pcpn_vs_temp.html"
+ width="1000"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
+From this plot we can deduce that days with average temperatures well below freezing see the most precipitation (likely as snow), and mean daily precipitation then steadily falls off as it warms, reaching its lowest values on the hottest days.
+
+
+
+
+
+
+
+
 
