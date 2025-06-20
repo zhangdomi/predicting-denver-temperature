@@ -10,7 +10,7 @@ By Yu Jie Zhang, zhngyj@umich.edu
 - [Conclusion](#conclusion)
 
 ## Introduction
-Ever wondered what the temperature is going to be in Denver tomorrow and didn't want to open your weather app to check it? Or perhaps you are an active user of Kalshi and wanted to make more accurate predictions? Well, this project might serve as a guideline for both as I'm trying to explore the temperature of Denver.
+Ever wondered what the temperature is going to be in Denver tomorrow and didn't want to open your weather app to check it? Or perhaps you are an active user of Kalshi and wanted to make more accurate predictions? Well, this project might serve as a guideline for both as I'm trying to explore the temperature of Denver. \
 Accurate forecasts of daily average temperature are crucial for a wide range of applications -- from optimizing energy demand and crop management to planning outdoor events and ensuring public safety and (of course) making accurate bets on Kalshi. In this project, I gather over six decades of historical meteorological data from Boulder, Colorado (1960–2024) to build a model that predicts each day’s average temperature for 2024 based solely on past temperature records and a handful of engineered features. By leveraging a pipeline of data cleaning, feature engineering, and linear modeling techniques, I aim to quantify how much of the variability in tomorrow’s temperatures can be explained by the climatological norm and recent trends.
 
 This project investigates the question of **what is the average temperature of each day in 2024** and whether this is something we can predict using a linear model.
@@ -106,7 +106,7 @@ This pivot table of mean daily average temperatures for each month-decade combin
 
 ## Framing a Prediction Problem
 
-The ultimate goal is to predict the average temperature **`avgt`** of Denver in a given day using previous years' of data. Predicting the average temperature will give me a general idea of how a certain day's temperature market might look like on Kalshi.
+The ultimate goal is to predict the average temperature **`avgt`** of Denver in a given day using previous years' of data, this is a regression problem and hence I will use **`sklearn`**'s `linear_model` library. Predicting the average temperature will give me a general idea of how a certain day's temperature market might look like on Kalshi.
 
 This project is unique in that the data is comprised of time series data and that the features used for the prediction are the previous years of the same day. It is necessary to acknowledge that although this seems to make sense on surface level, it is not the ideal way of predicting as the prediction might not be able to capture some relevant information. For example, other predictive models might use a rolling window of last 7 days that might capture the general trend of a certain year better. 
 
@@ -117,7 +117,6 @@ The model will be evaluated using three metrics:
 * **`Mean Squared Error (MSE)`**: penalizes larger errors more heavily, ensuring that days with unexpectedly large misses are driven down.
 
 * **`Root Mean Squared Error (RMSE)`**: the square root of MSE, which brings the penalization of large errors back into the original °F units for easy interpretation.
-
 
 
 ## Baseline Model
