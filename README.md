@@ -47,7 +47,7 @@ After cleaning this is how my dataset looks like:
 **<u>Univariate Analysis</u>**
  <iframe
  src="assets/violin_plot.html"
- width="1200"
+ width="1000"
  height="600"
  frameborder="0"
  ></iframe>
@@ -56,7 +56,7 @@ This violin plot shows the distribution of average temperatures across months in
 
  <iframe
  src="assets/daily_avg_temp.html"
- width="1200"
+ width="1000"
  height="600"
  frameborder="0"
  ></iframe>
@@ -67,7 +67,7 @@ This plot shows the seasonality from 2014 to 2024 highlighting the fact that Den
 
  <iframe
  src="assets/min_max.html"
- width="1200"
+ width="1000"
  height="600"
  frameborder="0"
  ></iframe>
