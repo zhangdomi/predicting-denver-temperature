@@ -5,7 +5,7 @@ By Yu Jie Zhang, zhngyj@umich.edu
 # Table of Contents
 - [Introduction](#introduction)
 - [Data Cleaning and Exploratory Data Analysis](#exploratory-data-analysis)
-- [Problem Identification](#problem-identification)
+- [Framing a Prediction Problem](#problem-identification)
 - [Baseline Model](#baseline-model)
 - [Final Model](#final-model)
 - [Conclusion](#conclusion)
@@ -116,6 +116,35 @@ The model will be evaluated using three metrics:
 * **`Mean Squared Error (MSE)`**: penalizes larger errors more heavily, ensuring that days with unexpectedly large misses are driven down.
 
 * **`Root Mean Squared Error (RMSE)`**: the square root of MSE, which brings the penalization of large errors back into the original °F units for easy interpretation.
+
+
+## Baseline Model
+
+The initial model is a multiple linear regression with the following features:
+
+**Response:**
+
+* **avgt_2024** (Quantitative)
+
+**Predictors:**
+
+* **avgt_1960, avgt_1961, …, avgt_2023** (all Quantitative historical daily average temperatures)
+
+Because all predictors are already numeric, no categorical encoding was necessary. The baseline was implemented using an **`sklearn`** Pipeline composed of a **`StandardScaler`** (to center and scale each feature) followed by a **`LinearRegression`** estimator. A 75–25 train–test split (`random_state=42`) was used to evaluate performance.
+
+
+**Test Performance**:
+
+- **MAE: 5.44 °F**
+- **MSE: 55.32 °F<sup>2</sup>**
+- **RMSE: 7.44 °F**
+
+An average test‐set error of 7.4 °F and average absolute error of 5.44 °F indicates that while the model learns the broad seasonal pattern, its day‐to‐day predictions remain off by a week’s temperature swing on average. This suggests clear room for improvement via feature engineering (e.g. rolling windows, seasonality cycles) and regularization.
+
+
+
+
+
 
 
 
