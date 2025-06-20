@@ -45,8 +45,15 @@ After cleaning this is how my dataset looks like:
 |  3 | 1960-01-04 00:00:00 |    30 |     3 |   16.5 |   0    | 01-04 |
 |  4 | 1960-01-05 00:00:00 |    36 |    10 |   23   |   0    | 01-05 |
 
+**<u>Univariate Analysis</u>**
+ <iframe
+ src="assets/violin_plot.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
 
-
+This violin plot shows the distribution of average temperatures across months in all years. Based on the plot we can clearly see that Denver in general follows the "normal" temperature of being hotter in the summer and colder in the winter.
 
 
 
