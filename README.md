@@ -1,3 +1,4 @@
+Predicting Denver's Temperature
 By Yu Jie Zhang, zhngyj@umich.edu
 
 # Table of Contents
@@ -9,7 +10,8 @@ By Yu Jie Zhang, zhngyj@umich.edu
 - [Conclusion](#conclusion)
 
 ## Introduction
-Accurate forecasts of daily average temperature are crucial for a wide range of applications -- from optimizing energy demand and crop management to planning outdoor events and ensuring public safety. In this project, I gather over six decades of historical meteorological data from Boulder, Colorado (1960–2024) to build a model that predicts each day’s average temperature for 2024 based solely on past temperature records and a handful of engineered features. By leveraging a pipeline of data cleaning, feature engineering, and linear modeling techniques, I aim to quantify how much of the variability in tomorrow’s temperatures can be explained by the climatological norm and recent trends.
+Ever wondered what the temperature is going to be in Denver tomorrow and didn't want to open your weather app to check it? Or perhaps you are an active user of Kalshi and wanted to make more accurate predictions? Well, this project might serve as a guideline for both as I'm trying to explore the temperature of Denver.
+Accurate forecasts of daily average temperature are crucial for a wide range of applications -- from optimizing energy demand and crop management to planning outdoor events and ensuring public safety and (of course) making accurate bets on Kalshi. In this project, I gather over six decades of historical meteorological data from Boulder, Colorado (1960–2024) to build a model that predicts each day’s average temperature for 2024 based solely on past temperature records and a handful of engineered features. By leveraging a pipeline of data cleaning, feature engineering, and linear modeling techniques, I aim to quantify how much of the variability in tomorrow’s temperatures can be explained by the climatological norm and recent trends.
 
 This project investigates the question of **what is the average temperature of each day in 2024** and whether this is something we can predict using a linear model.
 
