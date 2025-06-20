@@ -1,4 +1,4 @@
-Predicting Denver's Temperature
+**Predicting Denver's Temperature** \
 By Yu Jie Zhang, zhngyj@umich.edu
 
 # Table of Contents
@@ -141,9 +141,9 @@ Because all predictors are already numeric, no categorical encoding was necessar
 - **MSE: 55.32 °F<sup>2</sup>**
 - **RMSE: 7.44 °F**
 
-An average test‐set error of 7.4 °F and average absolute error of 5.44 °F indicates that while the model learns the broad seasonal pattern, its day‐to‐day predictions remain off by a week’s temperature swing on average. This suggests clear room for improvement via feature engineering (e.g. rolling windows, seasonality cycles) and regularization.
+An average test‐set error of 7.4 °F and average absolute error of 5.44 °F indicates that while the model learns the broad seasonal pattern, its day‐to‐day predictions remain off by a week’s temperature swing on average. This suggests room for improvement via feature engineering (e.g. rolling windows, seasonality cycles) and regularization.
 
-Furthermore, upon inspection I found that the model coefficients are not around 1/60 same as one would expect, i.e. averaging out all the year, rather it's a mix of positive and negative values that range from -4 to 4 usually. This means the linear regression model is emphasizing some years while viewing others are not as important. 
+Furthermore, upon inspection I found that the model coefficients are not around 1/64 same as one would expect, i.e. averaging out all the year, rather it's a mix of positive and negative values that range from -4 to 4 usually. This means the linear regression model is emphasizing some years while viewing others are not as important. 
 
 ## Final Model
 
