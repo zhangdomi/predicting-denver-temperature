@@ -36,6 +36,7 @@ Despite dropping Feb. 29 data I still had **5208** values missing, that span all
 
 **Cleaned dataset**
 After cleaning this is how my dataset looks like:
+
 |    | date                |   max |   min |   avgt |   pcpn | md    |
 |---:|:--------------------|------:|------:|-------:|-------:|:------|
 |  0 | 1960-01-01 00:00:00 |    31 |    15 |   23   |   0.07 | 01-01 |
