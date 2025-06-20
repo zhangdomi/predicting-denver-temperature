@@ -1,5 +1,3 @@
-# Predicting Denver Temperature
-
 By Yu Jie Zhang, zhngyj@umich.edu
 
 # Table of Contents
@@ -180,10 +178,10 @@ To improve on the baseline model, I made a few enhancements:
 - **MSE: 46.80 °F<sup>2</sup>**
 - **RMSE: 6.84 °F**
 
-The final models achieves a **0.6 °F improvement on RMSE** and approximately **0.5 °F improvement on MAE**, confirming that the engineered features and L1 regularization meaningfully improve day-ahead average temperature predictions. However, we have to keep in mind that while the errors decreased, an average prediction error of 5-6 Fahrenheit is still significant. 
+The final model achieves a **0.6 °F improvement on RMSE** and approximately **0.5 °F improvement on MAE**, confirming that the engineered features and L1 regularization meaningfully improve day-ahead average temperature predictions. However, we have to keep in mind that while the errors decreased, an average prediction error of 5-6 Fahrenheit is still significant. 
 
 ## Conclusion
-Finally, while this project has achieved its goal of improving model error, I believe that the initial approach of using a linear model trained on the days' of previous year might not have been the best approach. While we can expect some kind of relationship between days' of previous years there's likely a much better relationship to discover by using a model that uses previous day's up to the day of prediction. 
+Finally, while this project has achieved its goal of improving model error, I believe that the initial approach of using a linear model trained on the days' of previous year might not have been the best approach. While we can expect some kind of relationship between days' of previous years there's likely a much better relationship to discover by using a model that uses previous days' data up to the day of prediction. 
 Going forward, I might change the model to something more complex but that's up to discussion. Furthermore, predicting the extremas (max and min) also becomes harder as linear models aren't able to capture the intricacies.
 
 
