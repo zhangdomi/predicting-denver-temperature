@@ -130,7 +130,7 @@ The initial model is a multiple linear regression with the following features:
 
 **Predictors:**
 
-* **avgt_1960, avgt_1961, …, avgt_2023** (all Quantitative historical daily average temperatures)
+* **avgt_1960, avgt_1961, …, avgt_2023** (All quantitative historical daily average temperatures)
 
 Because all predictors are already numeric, no categorical encoding was necessary. The baseline was implemented using an **`sklearn`** Pipeline composed of a **`StandardScaler`** (to center and scale each feature) followed by a **`LinearRegression`** estimator. A 75–25 train–test split (`random_state=42`) was used to evaluate performance.
 
@@ -143,7 +143,7 @@ Because all predictors are already numeric, no categorical encoding was necessar
 
 An average test‐set error of 7.4 °F and average absolute error of 5.44 °F indicates that while the model learns the broad seasonal pattern, its day‐to‐day predictions remain off by a week’s temperature swing on average. This suggests clear room for improvement via feature engineering (e.g. rolling windows, seasonality cycles) and regularization.
 
-Furthermore, upon inspection I found that the model coefficients are not around 1/60 same as one would expect, i.e. averaging out all the year, rather it's a mix of positive and negative values that range from -4 to 4 usually. That means the linear regression model is emphasizing some years while viewing others are not as important. 
+Furthermore, upon inspection I found that the model coefficients are not around 1/60 same as one would expect, i.e. averaging out all the year, rather it's a mix of positive and negative values that range from -4 to 4 usually. This means the linear regression model is emphasizing some years while viewing others are not as important. 
 
 ## Final Model
 
@@ -180,7 +180,11 @@ To improve on the baseline model, I made a few enhancements:
 - **MSE: 46.80 °F<sup>2</sup>**
 - **RMSE: 6.84 °F**
 
-The final models achieves a 0.6 °F reduction in RMSE and approximately 0.5 °F reduction in MAE, confirming that the engineered features and L1 regularization meaningfully improve day-ahead average temperature predictions. 
+The final models achieves a **0.6 °F improvement on RMSE** and approximately **0.5 °F improvement on MAE**, confirming that the engineered features and L1 regularization meaningfully improve day-ahead average temperature predictions. However, we have to keep in mind that while the errors decreased, an average prediction error of 5-6 Fahrenheit is still significant. 
+
+## Conclusion
+Finally, while this project has achieved its goal of improving model error, I believe that the initial approach of using a linear model trained on the days' of previous year might not have been the best approach. While we can expect some kind of relationship between days' of previous years there's likely a much better relationship to discover by using a model that uses previous day's up to the day of prediction. 
+Going forward, I might change the model to something more complex but that's up to discussion. Furthermore, predicting the extremas (max and min) also becomes harder as linear models aren't able to capture the intricacies.
 
 
 
