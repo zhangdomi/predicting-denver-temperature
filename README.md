@@ -4,7 +4,7 @@ By Yu Jie Zhang, zhngyj@umich.edu
 
 # Table of Contents
 - [Introduction](#introduction)
-- [Data Cleaning and Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Cleaning and Exploratory Data Analysis](#data-cleaning-and-exploratory-data-analysis)
 - [Framing a Prediction Problem](#framing-a-prediction-problem)
 - [Baseline Model](#baseline-model)
 - [Final Model](#final-model)
@@ -23,6 +23,7 @@ Data size: **23742 rows** and **7 columns**
 - **`min`**: Minimum temperature in Fahrenheit
 - **`max`**: Maximum temperature in Fahrenheit
 - **`pcpn`**: Measured precipitation in inches
+
 
 ## Data Cleaning and Exploratory Data Analysis
 To ensure a meaningful and valid data analysis, the following steps were taken to clean and organize the dataset:
@@ -156,22 +157,22 @@ To improve on the baseline model, I made a few enhancements:
 
 * Quantitative features (71 total)
 
-    * 64 historical averages: avgt_1960 through avgt_2023
+    * 64 historical averages: `avgt_1960` through `avgt_2023`
 
-    * 4 recent extremes: min_2022, max_2022, min_2023, max_2023
+    * 4 recent extremes: `min_2022`, `max_2022`, `min_2023`, `max_2023`
     
-    * 1 variability measure: avgt_std
+    * 1 variability measure: `avgt_std`
 
-    * 2 cyclical seasonality terms: sin_doy, cos_doy
+    * 2 cyclical seasonality terms: `sin_doy`, `cos_doy`
 
 * Encodings: All features are numeric, so no categorical or ordinal encoding was required.
 
 * Model:
-    * FunctionTransformer for feature engineering
+    * `FunctionTransformer`s for feature engineering
 
-    * StandardScaler to center and scale
+    * `StandardScaler` to center and scale
 
-    * Lasso regression with alpha=0.1 (chosen by 7-fold CV over a logarithmic grid)
+    * **`Lasso regression`** with `alpha=0.1` (chosen by 7-fold CV over a logarithmic grid)
 
 **Final Model Performance**:
 
