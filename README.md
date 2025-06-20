@@ -5,7 +5,7 @@ By Yu Jie Zhang, zhngyj@umich.edu
 # Table of Contents
 - [Introduction](#introduction)
 - [Data Cleaning and Exploratory Data Analysis](#exploratory-data-analysis)
-- [Framing a Prediction Problem](#problem-identification)
+- [Framing a Prediction Problem](#framing-a-prediction-problem)
 - [Baseline Model](#baseline-model)
 - [Final Model](#final-model)
 - [Conclusion](#conclusion)
@@ -118,6 +118,7 @@ The model will be evaluated using three metrics:
 * **`Root Mean Squared Error (RMSE)`**: the square root of MSE, which brings the penalization of large errors back into the original °F units for easy interpretation.
 
 
+
 ## Baseline Model
 
 The initial model is a multiple linear regression with the following features:
@@ -141,8 +142,44 @@ Because all predictors are already numeric, no categorical encoding was necessar
 
 An average test‐set error of 7.4 °F and average absolute error of 5.44 °F indicates that while the model learns the broad seasonal pattern, its day‐to‐day predictions remain off by a week’s temperature swing on average. This suggests clear room for improvement via feature engineering (e.g. rolling windows, seasonality cycles) and regularization.
 
+Furthermore, upon inspection I found that the model coefficients are not around 1/60 same as one would expect, i.e. averaging out all the year, rather it's a mix of positive and negative values that range from -4 to 4 usually. That means the linear regression model is emphasizing some years while viewing others are not as important. 
 
+## Final Model
 
+To improve on the baseline model, I made a few enhancements:
+**Feature Engineering**
+* **Historical variability (volatility)**: Added **`avgt_std`**, the standard deviation of the daily average temperature across all prior years, to capture overall inter-annual variability.
+* **Recent extremes**: Kept only the minimum and maximum temperatures from the two most recent years (`min_2022`, `max_2022`, `min_2023`, `max_2023`) to focus on recent extreme conditions and reduce dimensionality.
+* **Seasonality**: Created two cyclical features, `sin_doy` and `cos_doy`, by mapping each calendar day (“MM-DD”) to its day-of-year and applying sine/cosine transforms to model the annual temperature cycle.
+
+**Pipeline & Features**
+
+* Quantitative features (71 total)
+
+** 64 historical averages: avgt_1960 through avgt_2023
+
+** 4 recent extremes: min_2022, max_2022, min_2023, max_2023
+
+** 1 variability measure: avgt_std
+
+** 2 cyclical seasonality terms: sin_doy, cos_doy
+
+* Encodings: All features are numeric, so no categorical or ordinal encoding was required.
+
+* Model:
+** FunctionTransformer for feature engineering
+
+** StandardScaler to center and scale
+
+** Lasso regression with alpha=0.1 (chosen by 7-fold CV over a logarithmic grid)
+
+**Final Model Performance**:
+
+- **MAE: 5.01 °F**
+- **MSE: 46.80 °F<sup>2</sup>**
+- **RMSE: 6.84 °F**
+
+The final models achieves a 0.6 °F reduction in RMSE and approximately 0.5 °F reduction in MAE. 
 
 
 
