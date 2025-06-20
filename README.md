@@ -48,7 +48,7 @@ After cleaning this is how my dataset looks like:
 **<u>Univariate Analysis</u>**
  <iframe
  src="assets/violin_plot.html"
- width="800"
+ width="1200"
  height="600"
  frameborder="0"
  ></iframe>
