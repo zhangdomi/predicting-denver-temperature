@@ -53,8 +53,16 @@ After cleaning this is how my dataset looks like:
  frameborder="0"
  ></iframe>
 
-This violin plot shows the distribution of average temperatures across months in all years. Based on the plot we can clearly see that Denver in general follows the "normal" temperature of being hotter in the summer and colder in the winter.
+This violin plot shows the distribution of average temperatures across months in all years. Based on the plot we can clearly see that Denver in general follows the "normal" temperature of being hotter in the summer and colder in the winter. We can also observe that in general, the summer months have a smaller range of average temperatures while the deviation is larger in the winter.
 
+ <iframe
+ src="assets/daily_avg_temp.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
+This plot shows the seasonality from 2014 to 2024 highlighting the fact that Denver hasn't experienced a lot of changes in terms of drastic temperature increases or decreases. There are of course outlier days that are warmer or colder than the usual which are highlighted by the spikes
 
 
 
