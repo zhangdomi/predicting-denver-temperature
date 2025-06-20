@@ -156,22 +156,22 @@ To improve on the baseline model, I made a few enhancements:
 
 * Quantitative features (71 total)
 
-** 64 historical averages: avgt_1960 through avgt_2023
+    * 64 historical averages: avgt_1960 through avgt_2023
 
-** 4 recent extremes: min_2022, max_2022, min_2023, max_2023
+    * 4 recent extremes: min_2022, max_2022, min_2023, max_2023
+    
+    * 1 variability measure: avgt_std
 
-** 1 variability measure: avgt_std
-
-** 2 cyclical seasonality terms: sin_doy, cos_doy
+    * 2 cyclical seasonality terms: sin_doy, cos_doy
 
 * Encodings: All features are numeric, so no categorical or ordinal encoding was required.
 
 * Model:
-** FunctionTransformer for feature engineering
+    * FunctionTransformer for feature engineering
 
-** StandardScaler to center and scale
+    * StandardScaler to center and scale
 
-** Lasso regression with alpha=0.1 (chosen by 7-fold CV over a logarithmic grid)
+    * Lasso regression with alpha=0.1 (chosen by 7-fold CV over a logarithmic grid)
 
 **Final Model Performance**:
 
@@ -179,7 +179,7 @@ To improve on the baseline model, I made a few enhancements:
 - **MSE: 46.80 °F<sup>2</sup>**
 - **RMSE: 6.84 °F**
 
-The final models achieves a 0.6 °F reduction in RMSE and approximately 0.5 °F reduction in MAE. 
+The final models achieves a 0.6 °F reduction in RMSE and approximately 0.5 °F reduction in MAE, confirming that the engineered features and L1 regularization meaningfully improve day-ahead average temperature predictions. 
 
 
 
