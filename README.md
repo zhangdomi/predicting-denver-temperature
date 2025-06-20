@@ -4,8 +4,7 @@ By Yu Jie Zhang, zhngyj@umich.edu
 
 # Table of Contents
 - [Introduction](#introduction)
-- [Data Cleaning](#data-cleaning)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Cleaning and Exploratory Data Analysis](#exploratory-data-analysis)
 - [Problem Identification](#problem-identification)
 - [Baseline Model](#baseline-model)
 - [Final Model](#final-model)
@@ -57,15 +56,21 @@ This violin plot shows the distribution of average temperatures across months in
 
  <iframe
  src="assets/daily_avg_temp.html"
- width="800"
+ width="1200"
  height="600"
  frameborder="0"
  ></iframe>
 
 This plot shows the seasonality from 2014 to 2024 highlighting the fact that Denver hasn't experienced a lot of changes in terms of drastic temperature increases or decreases. There are of course outlier days that are warmer or colder than the usual which are highlighted by the spikes
 
+**<u>Bivariate Analysis</u>**
 
+ <iframe
+ src="assets/min_max.html"
+ width="1200"
+ height="600"
+ frameborder="0"
+ ></iframe>
 
-
-
+In this plot we can see that, in general, the higher the minimum temperature, the higher the daytime high temperature -- i.e. warmer nights almost always lead to warmer days. This tight, roughly linear band of points shows a strong positive correlation between the daily minimum and maximum temperatures
 
